@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>form validater</title>
+    <style>
+    .layout-columns > * {
+      margin-bottom: 10px;
+    }
+    .input.input-style {
+      width: 240px;
+    }
+    .error-message {
+        display: none;
+    }
+    .reruired-message {
+        display: none;
+    }
+    .is-error .error-message {
+        display: block;
+    }
+    .is-required .reruired-message {
+        display: block;
+    }
+    .btn {
+      padding: 5px 30px;
+      color: #fff;
+      background-color: #27ae60;
+      cursor: pointer;
+    }
+    .btn.is-disabled {
+      background-color: #aaa;
+      cursor: default;;
+    }
+    </style>
+</head>
+<body>
+    <form id="js-form" class="layout-columns" action="#" method="post">
+      <p id='parent-1' >Form Validater</p>
+      <div class="item">
+          <p class="error-message">数字123-1234-1234の形式で入力してください</p>
+          <p class="reruired-message">未入力です！</p>
+          <input id="js-form-name"
+                 class='input input-style'
+                 type='text'
+                 placeholder="090-5458-8660"
+                 pattern='^[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$'>
+      </div>
+      <div id='parent-234'>
+          <p class="error-message">数字１桁を入力してください</p>
+          <p class="reruired-message">未入力です！</p>
+          <input id="js-form-number" class='input input-style' type='number' max="4">
+      </div>
+      <div id='parent-huhuhu'>
+          <p class="error-message">数字１桁を入力してください</p>
+          <p class="reruired-message">苗字 / 名前を入力してください！</p>
+          <input name='firstName[current_street_name]' class='input input-style js-form-name' placeholder="first name">
+          <input name='lastName[current_street_aaa]' class='input input-style js-form-name' placeholder="last name">
+      </div>
+      <div>
+          <p class="error-message">Error</p>
+          <p class="reruired-message">未入力です！</p>
+          <input id="js-form-test" class='input input-style' type='number'>
+      </div>
+      <div id="radio-wrapper">
+        <label>
+          <input type="radio" name="gender" value="0">男性
+        </label>
+        <labe>
+          <input type="radio" name="gender" value="1">女性
+        </labe>
+        <p class="reruired-message">未入力です！</p>
+      </div>
+      <div id="check-wrapper">
+        <label>
+          <input type="checkbox" name="meta" value="0">A
+        </label>
+        <labe>
+          <input type="checkbox" name="meta" value="1">B
+        </labe>
+        <label>
+          <input type="checkbox" name="meta" value="2">C
+        </label>
+        <labe>
+          <input type="checkbox" name="meta" value="3">D
+        </labe>
+        <p class="reruired-message">未入力です！</p>
+      </div>
+      <h3>住所</h3>
+      <div>
+        <select name="address[hoge]" class='js-select'>
+          <option value="0">選択してください1</option>
+          <option value="foo">foo1</option>
+          <option value="bar">bar1</option>
+          <option value="baz">baz1</option>
+        </select>
+        <select name="address[huga]" class='js-select'>
+          <option value="0">選択してください2</option>
+          <option value="foo">foo2</option>
+          <option value="bar">bar2</option>
+          <option value="baz">baz2</option>
+        </select>
+      </div>
+      <h3>グループ</h3>
+      <div>
+        <select name="group[hoge1]" class='js-select-group'>
+          <option value="0">選択してください1</option>
+          <option value="foo">foo1</option>
+          <option value="bar">bar1</option>
+          <option value="baz">baz1</option>
+        </select>
+        <select name="group[huga2]" class='js-select-group'>
+          <option value="0">選択してください2</option>
+          <option value="foo">foo2</option>
+          <option value="bar">bar2</option>
+          <option value="baz">baz2</option>
+        </select>
+        <select name="group[huga3]" class='js-select-group'>
+          <option value="0">選択してください2</option>
+          <option value="foo">foo2</option>
+          <option value="bar">bar2</option>
+          <option value="baz">baz2</option>
+        </select>
+      </div>
+      <div>
+        <a id="js-submit" class="btn btn-submit" type="submit">submit</a>
+      </div>
+    </form>
+    <script src="./app.dst.js"></script>
+</body>
+</html>
