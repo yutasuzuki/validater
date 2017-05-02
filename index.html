@@ -4,18 +4,25 @@
     <meta charset="utf-8" />
     <title>form validater</title>
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      padding: 5px;
+    }
     .layout-columns > * {
       margin-bottom: 10px;
-      padding: 10px;
+      padding: 5px;
     }
     .input.input-style {
       width: 240px;
     }
     .error-message {
-        display: none;
+      display: none;
     }
     .reruired-message {
-        display: none;
+      display: none;
     }
     .is-error {
       background-color: red;
@@ -95,6 +102,7 @@
       </div>
       <h3>住所</h3>
       <div>
+        <p class="reruired-message">未選択です！</p>
         <select name="address[hoge]" class='js-select'>
           <option value="0">選択してください1</option>
           <option value="foo">foo1</option>
@@ -110,6 +118,7 @@
       </div>
       <h3>グループ</h3>
       <div>
+        <p class="reruired-message">未選択です！</p>
         <select name="group[hoge1]" class='js-select-group'>
           <option value="0">選択してください1</option>
           <option value="foo">foo1</option>

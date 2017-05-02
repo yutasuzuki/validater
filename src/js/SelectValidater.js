@@ -70,21 +70,16 @@ class SelectValidater {
     }
     for(let i = 0, len = this.targets.length; i < len; i++){
       let str = this.targets[i].value;
-      let valid;
       if (!this.targets[i].value) {
-        valid = false;
         validItems.valid.push(false);
       } else if (this.targets[i].value == '0') {
-        valid = false;
         validItems.valid.push(false);
       } else {
-        valid = true;
         validItems.valid.push(true);
       }
     }
 
     let isValid = this.isValidate(validItems);
-    console.log(isValid)
     if(isValid){
       this.removeClass(this.options.parent,'is-required');
       if (isValid) {
