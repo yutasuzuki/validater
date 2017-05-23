@@ -23,7 +23,7 @@ class SelectValidater {
         'group': options && options.group || false
       };
       // firstTouch check
-      var isFirstTouch = false;
+      let isFirstTouch = false;
       this.firstTouchFlag = {};
 
       // set validate status
@@ -136,7 +136,7 @@ class SelectValidater {
   removeClass(element,str){
     let item = '';
     let klasses = element.className.split(' ');
-    for(var i = 0, len = klasses.length; i < len; i++){
+    for(let i = 0, len = klasses.length; i < len; i++){
       if(klasses[i] !== str){
         let klass = klasses[i] + ' ';
         if(klass !== ' ') {

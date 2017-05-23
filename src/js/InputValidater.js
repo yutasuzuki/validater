@@ -22,7 +22,7 @@ class InputValidater {
         'firstTouch': options && options.firstTouch || false
       };
       // firstTouch check
-      var isFirstTouch = false;
+      let isFirstTouch = false;
       this.firstTouchFlag = {};
 
       // set validate status
@@ -63,7 +63,7 @@ class InputValidater {
 
   //add Event
   addEvent() {
-    for(var i = 0,len = this.targets.length; i < len; i++) {
+    for(let i = 0,len = this.targets.length; i < len; i++) {
       this.targets[i].addEventListener('change', this.changeHandler);
       this.targets[i].addEventListener('input', this.inputHandler);
       this.targets[i].addEventListener('blur', this.firstTouchHandler);
@@ -77,7 +77,7 @@ class InputValidater {
       str: [],
       valid: []
     }
-    for(var i = 0,len = this.targets.length; i < len; i++){
+    for(let i = 0,len = this.targets.length; i < len; i++){
       let str = this.targets[i].value;
       let valid = this.targets[i].validity.valid;
       if(str){
@@ -140,7 +140,7 @@ class InputValidater {
   removeClass(element,str){
     let item = '';
     let klasses = element.className.split(' ');
-    for(var i = 0, len = klasses.length; i < len; i++){
+    for(let i = 0, len = klasses.length; i < len; i++){
       if(klasses[i] !== str){
         let klass = klasses[i] + ' ';
         if(klass !== ' ') {
